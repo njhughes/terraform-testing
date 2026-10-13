@@ -2,4 +2,4 @@
 
 * Add subnet resources to our Terraform configuration
 * Cross-resource references
-more learning
+more learning, and more
