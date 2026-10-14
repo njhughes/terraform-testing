@@ -4,9 +4,10 @@ on:
 jobs:
     terraform-deploy:
         runs-on: ubuntu-latest
+        
         steps:
-        -    name: Config AWS Creds
-             uses: aws-actions/configure-aws-credentials@v1
+        -    name: Configure AWS Credentials
+             uses: aws-actions/configure-aws-credentials@v6.3.0
              with:
                 role-to-assume: arn:aws:iam::776074619434:role/github-actions-terraform
                 aws-region: eu-west-2
