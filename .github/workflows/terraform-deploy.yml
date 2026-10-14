@@ -1,10 +1,14 @@
 on:
     workflow_dispatch:
     push:
+
+permissions:
+ id-token: write
+
 jobs:
     terraform-deploy:
         runs-on: ubuntu-latest
-        
+
         steps:
         -    name: Configure AWS Credentials
              uses: aws-actions/configure-aws-credentials@v6.3.0
