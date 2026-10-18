@@ -15,5 +15,7 @@ jobs:
              with:
                 role-to-assume: arn:aws:iam::776074619434:role/github-actions-terraform
                 aws-region: eu-west-2
-        -    name: Additional steps
-             run: |    
+        -    name: Run TF init command
+             run: terraform init
+        -    name: Run TF paln command
+             run: terraform plan
