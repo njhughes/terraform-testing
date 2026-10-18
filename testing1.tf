@@ -18,5 +18,4 @@ module "vpc" {
   //tags = {
     //Terraform = "true"
     //Environment = "dev"
-  }
 }
