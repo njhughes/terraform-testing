@@ -10,6 +10,9 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+        -    name: Clone src code
+             uses: actions/checkout@v2     
+
         -    name: Configure AWS Credentials
              uses: aws-actions/configure-aws-credentials@v6.3.0
              with:
