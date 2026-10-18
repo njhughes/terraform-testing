@@ -10,20 +10,31 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-        -    name: Clone src code
-             uses: actions/checkout@v2     
+#        -    name: Clone src code
+ #            uses: actions/checkout@v2     
 
         -    name: Configure AWS Credentials
              uses: aws-actions/configure-aws-credentials@v6.3.0
              with:
                 role-to-assume: arn:aws:iam::776074619434:role/github-actions-terraform
                 aws-region: eu-west-2
-        -    name: Run TF init command
-             run: terraform init
+#        -    name: Run TF init command
+#             run: terraform init
 #       -    name: Run TF paln command
 #             run: terraform plan
 
-        -    name: Terraform Plan
-             id: plan
-             run: terraform plan -no-color -input=false
-             continue-on-error: true
+#        -    name: Terraform Plan
+#             id: plan
+#             run: terraform plan -no-color -input=false
+ #            continue-on-error: true
+
+        - name: Checkout Code
+          uses: actions/checkout@v4
+
+      # 2. Install the preferred version of Terraform CLI
+        - name: Setup Terraform
+          uses: hashicorp/setup-terraform@v4
+
+      # 3. Initialize Terraform
+        - name: Terraform Init
+          run: terraform init -input=false
